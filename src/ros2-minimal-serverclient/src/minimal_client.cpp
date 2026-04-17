@@ -4,7 +4,7 @@
 #include <random>
 
 /* Minimal Client Class Definition */
-class MinimalClient : public rclcpp:Node {
+class MinimalClient : public rclcpp::Node {
     private:
         rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedPtr client_; // Shared pointer to a client object of type AddTwoInts from example_interfaces
         rclcpp::TimerBase::SharedPtr timer_;
