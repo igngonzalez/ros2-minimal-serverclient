@@ -7,9 +7,8 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(example_interfaces REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -22,5 +21,15 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+# Define minimal server target and link libraries
+add_executable(minimal_server src/minimal_server.cpp)
+ament_target_dependencies(minimal_server rclcpp example_interfaces)
+
+# Install binaries to specific folder
+install(TARGETS
+  minimal_server
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
