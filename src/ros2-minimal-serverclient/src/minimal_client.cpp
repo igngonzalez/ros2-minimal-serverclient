@@ -23,12 +23,12 @@ class MinimalClient : public rclcpp::Node {
             client_ = this->create_client<example_interfaces::srv::AddTwoInts>("add_ints"); // Creates our client object by using the create_client method from Node.
                                                                                             // <Type>(name_of_the_service_to_interact_with)
             while (!client_->wait_for_service(std::chrono::seconds(2))) {   // Wait until service its available. If its not, then print a warning message
-                RCLCPP_WARN(this->get_logger, "Waiting for service...");
+                RCLCPP_WARN(this->get_logger(), "Waiting for service...");
             }
             std::srand(std::time(nullptr)); // Seed random number generator with current time
             timer_ = this->create_wall_timer(std::chrono::milliseconds(2000), std::bind(&MinimalClient::timer_callback, this));
         }
-}
+};
 
 /* Main Entrypoint*/
 int main(int argc, char *argv[]) {
