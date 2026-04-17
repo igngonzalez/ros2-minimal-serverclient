@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "example_interfaces/srv/add_two_ints"
+#include "example_interfaces/srv/add_two_ints.hpp"
 
 #include <random>
 
