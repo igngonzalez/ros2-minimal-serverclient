@@ -26,9 +26,14 @@ endif()
 add_executable(minimal_server src/minimal_server.cpp)
 ament_target_dependencies(minimal_server rclcpp example_interfaces)
 
+# Define minimal client target and link libraries
+add_executable(minimal_client src/minimal_client.cpp)
+ament_target_dependencies(minimal_client rclcpp example_interfaces)
+
 # Install binaries to specific folder
 install(TARGETS
   minimal_server
+  minimal_client
   DESTINATION lib/${PROJECT_NAME}
 )
 
