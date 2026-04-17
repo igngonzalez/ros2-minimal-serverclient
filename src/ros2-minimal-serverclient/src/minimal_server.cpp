@@ -12,7 +12,7 @@ class MinimalServer : public rclcpp::Node { // Inherits from class Node from rcl
 
     public:
         MinimalServer() : Node("minimal_server") {
-            server_ = this -> create_service<example_interfaces::srv::AddTwoInts>("add_ints", std::bind(&MinimalServer::server_callback, this, std::placeholders::_1, std::placeholders::_2));    // Create a service object. This is what creates our node into a server.
+            server_ = this -> create_service<example_interfaces::srv::AddTwoInts>("add_ints", std::bind(&MinimalServer::server_callback, this, std::placeholders::_1, std::placeholders::_2));  // Create a service object. This is what creates our node into a server.
                                                                                                                                                                                                 // We do this by calling the function create_service from Node.
                                                                                                                                                                                                 // <Type_for_the_template>(name_of_our_service, which_callback_should_be_used)
     
