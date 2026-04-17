@@ -42,11 +42,11 @@ colcon build --packages-select ros2-minimal-serverclient
 ```bash
 # Terminal 1: run the publisher
 . install/setup.bash
-ros2 run ros2-minimal-pubsub minimal_publisher
+ros2 run ros2-minimal-serverclient minimal_client
 
 # Terminal 2: run the subscriber
 . install/setup.bash
-ros2 run ros2-minimal-pubsub minimal_subscriber
+ros2 run ros2-minimal-serverclient minimal_server
 ```
 
 # 📖 References
